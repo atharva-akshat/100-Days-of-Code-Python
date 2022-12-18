@@ -1,2 +1,3 @@
-# 100 Days of Code Python
- Udemy course's programs
+# 100 Days of Code Python by Dr. Angela Yu
+ 
+Programs written alongside the course.
