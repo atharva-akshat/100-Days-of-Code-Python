@@ -37,7 +37,7 @@ if input('You\'re at a cross road. Where do you want to go? Type "left" or "righ
         if door == "red":
             print("It's a room full of fire. Game Over.")
         elif door == "yellow":
-            print("You found the treasure! You Win!")
+            print("You found the treasure! You Win! ")
         elif door == "blue":
             print("You enter a room of beasts. Game Over.")
         else:
