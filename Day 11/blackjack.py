@@ -89,6 +89,3 @@ while input("\nStart a game of Blackjack? (y/n): ") == 'y':
                 end = True
         compare(user_score, computer_score)
 print("Exiting!")
-
-# Download and read this flow chart
-# https://drive.google.com/uc?export=download&id=1rDkiHCrhaf9eX7u7yjM1qwSuyEk-rPnt
