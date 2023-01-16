@@ -1,0 +1,1 @@
+Day 13 was explanations and tips on debugging. Nothing done on the programming side.
