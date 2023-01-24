@@ -1,8 +1,9 @@
+import os
 import random
 from turtle import Turtle, Screen
-
 from colorgram import extract
 
+os.system("pip install colorgram.py")
 t = Turtle()
 screen = Screen()
 screen.colormode(255)
