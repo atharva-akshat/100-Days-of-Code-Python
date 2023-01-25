@@ -16,9 +16,6 @@ class Snake:
         for i in range(3):
             self.add_body(STARTING_POS[i][0], STARTING_POS[i][1])
 
-    def add_square(self):
-        pass
-
     def move(self):
         for i in range(len(self.body) - 1, 0, -1):
             self.body[i].goto(self.body[i - 1].xcor(), self.body[i - 1].ycor())
@@ -65,4 +62,4 @@ class Snake:
             self.body[i].hideturtle()
         self.body[0].write(condition, font=FONT, align=ALIGNMENT)
         self.body[0].goto(0, 40)
-        self.body[0].write("GAME OVER!",font=FONT, align=ALIGNMENT)
+        self.body[0].write("GAME OVER!", font=FONT, align=ALIGNMENT)
