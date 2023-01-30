@@ -39,7 +39,7 @@ class Snake:
             self.body[0].setheading(DOWN)
 
     def add_body(self, x, y):
-        self.body.append(Turtle(shape="square"))
+        self.body.append(Turtle(shape="circle"))
         self.body[-1].color("white")
         self.body[-1].penup()
         self.body[-1].goto((x, y))
@@ -48,18 +48,26 @@ class Snake:
     def check(self):
         if self.body[0].xcor() > 280 or self.body[0].xcor() < -280 or self.body[0].ycor() > 280 or self.body[
             0].ycor() < -280:
-            self.end_game("You hit the wall!")
+            # self.end_game("You hit the wall!")
             return False
-        for seg in self.body[1:]:
-            if self.body[0].distance(seg) < 15:
-                self.end_game("You ate your own body!")
+        for seg in self.body[len(self.body)//2:]:
+            if self.body[0].distance(seg) < 5:
+                # self.end_game("You ate your own body!")
                 return False
         return True
 
-    def end_game(self, condition):
-        self.body[0].home()
-        for i in range(len(self.body)):
-            self.body[i].hideturtle()
-        self.body[0].write(condition, font=FONT, align=ALIGNMENT)
-        self.body[0].goto(0, 40)
-        self.body[0].write("GAME OVER!", font=FONT, align=ALIGNMENT)
+    # def end_game(self, condition):
+    #     self.body[0].home()
+    #     for i in range(len(self.body)):
+    #         self.body[i].hideturtle()
+    #     self.body[0].write(condition, font=FONT, align=ALIGNMENT)
+    #     self.body[0].goto(0, 40)
+    #     self.body[0].write("GAME OVER!", font=FONT, align=ALIGNMENT)
+
+    def reset(self):
+        for i in self.body:
+            i.reset()
+        self.body.clear()
+        for i in range(3):
+            self.add_body(STARTING_POS[i][0], STARTING_POS[i][1])
+        self.body[0].goto(STARTING_POS[0][0], STARTING_POS[0][1])

@@ -18,7 +18,7 @@ food = Food()
 score = Score()
 
 # Run the game code in a loop if it is not over
-while snake.check():
+while True:
     screen.update()
     snake.move()
 
@@ -44,10 +44,13 @@ while snake.check():
 
     # Checking if snake ate the food and increasing the score
     if snake.body[0].distance(food) < 15:
-        print("Chomp")
         food.reset_food()
         snake.add_body(snake.body[-1].xcor(), snake.body[-1].ycor())
         score.points += 1
 
+    if not snake.check():
+        snake.reset()
+        score.reset()
+
 # Waiting for mouse click to close game window
-screen.exitonclick()
+# screen.exitonclick()
